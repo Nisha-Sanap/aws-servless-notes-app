@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Cloud Notes App</h1>
+    <p class="welcome-text" id="welcomeText">Welcome!</p>
+
+    <div class="top-actions">
+        <div></div>
+        <button class="logout-btn" onclick="logoutUser()">Logout</button>
+    </div>
+
+    <h2 class="section-title">Add / Update Note</h2>
+
+    <form id="noteForm">
+        <input type="hidden" id="editingNoteId">
+
+        <label>Title</label>
+        <input type="text" id="title" required>
+
+        <label>Category</label>
+        <input type="text" id="category" placeholder="Example: Java, AWS, Python" required>
+
+        <label>Note Type</label>
+        <select id="noteType" required>
+            <option value="text">Text</option>
+            <option value="pdf">PDF</option>
+        </select>
+
+        <label id="contentLabel">Content</label>
+        <textarea id="content" rows="5" placeholder="Write your note here..."></textarea>
+
+        <div id="pdfFields">
+            <label>Select PDF</label>
+            <input type="file" id="pdfFile" accept="application/pdf">
+
+            <label>File Name</label>
+            <input type="text" id="fileName" readonly>
+        </div>
+
+        <label>Share this note?</label>
+        <select id="isShared" required>
+            <option value="false">No</option>
+            <option value="true">Yes</option>
+        </select>
+
+        <button type="submit" id="submitBtn">Add Note</button>
+    </form>
+
+    <h2 class="section-title">Search & Filter My Notes</h2>
+
+    <div class="filters">
+        <div>
+            <label>Search by Title</label>
+            <input type="text" id="searchInput" placeholder="Search notes...">
+        </div>
+
+        <div>
+            <label>Filter by Category</label>
+            <input type="text" id="categoryFilter" placeholder="Example: Java">
+        </div>
+
+        <div>
+            <label>Filter by Type</label>
+            <select id="typeFilter">
+                <option value="all">All</option>
+                <option value="text">Text</option>
+                <option value="pdf">PDF</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Filter by Sharing</label>
+            <select id="sharingFilter">
+                <option value="all">All</option>
+                <option value="shared">Shared</option>
+                <option value="private">Private</option>
+            </select>
+        </div>
+    </div>
+
+    <h2 class="section-title">My Notes</h2>
+    <div id="notesContainer" class="notes-grid"></div>
+
+    <h2 class="section-title">Shared Notes (All Users)</h2>
+    <div id="sharedNotesContainer" class="notes-grid"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
