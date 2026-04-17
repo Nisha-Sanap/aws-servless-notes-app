@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Notes App - Login</title>
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Cloud Notes App</h1>
+        <p class="subtitle">Login or Register to continue</p>
+
+        <div class="tab-buttons">
+            <button id="showLoginBtn" class="active">Login</button>
+            <button id="showRegisterBtn">Register</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="loginForm">
+            <label>Username</label>
+            <input type="text" id="loginUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="loginPassword" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="registerForm" style="display: none;">
+            <label>Full Name</label>
+            <input type="text" id="registerName" required>
+
+            <label>Username</label>
+            <input type="text" id="registerUsername" required>
+
+            <label>Password</label>
+            <input type="password" id="registerPassword" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <p id="messageBox" class="message-box"></p>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
